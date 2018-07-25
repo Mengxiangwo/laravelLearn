@@ -211,6 +211,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        //自定義Facade
+        'Ts' => App\Facade\Ts::class,
+        'Ts2' => App\Facade\Ts2::class,
     ],
 
 ];

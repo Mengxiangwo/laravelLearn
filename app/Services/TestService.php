@@ -13,8 +13,10 @@ use App\Contracts\TestContract;
 
 class TestService implements TestContract
 {
+    public $controller;
     public function callMe($controller)
     {
-        dd("Call Me From TestServiceProvider In ".$controller);
+        $this->controller = $controller;
+        dd("Call Me From TestServiceProvider In ".$this->controller);
     }
 }
