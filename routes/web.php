@@ -17,4 +17,12 @@ Route::get('/', function () {
 
 Route::resource('test', 'TestController');
 
+Route::get('/job/{id}', 'JobController@find');
+
+Route::get('/incr', 'JobController@incr');
+
+Route::get('/teacher/find/{id}', 'TeacherController@find');
+
+Route::get('/teacher/incr', 'TeacherController@incr');
+
 
