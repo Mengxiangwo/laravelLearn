@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('class');
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }

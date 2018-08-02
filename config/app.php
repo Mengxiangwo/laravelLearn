@@ -160,6 +160,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Laravel debugbar
+        Barryvdh\Debugbar\ServiceProvider::class,
+
         //自定義服務提供者
         App\Providers\TestServiceProvider::class,
     ],
@@ -210,6 +213,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //Laravel Debugbar
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
         //自定義Facade
         'Ts' => App\Facade\Ts::class,

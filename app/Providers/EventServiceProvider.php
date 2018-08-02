@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use function foo\func;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -16,6 +17,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Event' => [
             'App\Listeners\EventListener',
         ],
+        'App\Events\Test' => [
+            'App\Listeners\TestListener',
+        ],
     ];
 
     /**
@@ -27,6 +31,8 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Event::listen('event.test', function ($foo, $bar) {
+            echo $foo, $bar;
+        });
     }
 }
