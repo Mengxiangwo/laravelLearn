@@ -137,11 +137,12 @@ class TeacherController extends Controller
         /*$c = Teacher::position('>', '全職', 'hahah')->get();
         var_dump($c);*/
 
-        /*$t = Teacher::find(1);
-        Event::fire(new Test($t));
+        //$t = Teacher::find(1);
+        /*Event::fire(new Test($t));
         echo "success";*/
 
         //Event::fire('event.test', ['1', '2']);
+        //event(new Test($t));
 
         /*SendLogs::dispatch()->delay(Carbon::now()->addSeconds(20));
         echo "111";*/
@@ -151,9 +152,12 @@ class TeacherController extends Controller
             new SendLogs2,
         ])->dispatch();*/
 
-        SendLogs::dispatch()->onQueue('t');
-        SendLogs1::dispatch()->onQueue('t1');
-        SendLogs2::dispatch()->onQueue('t2');
+        //SendLogs1::dispatch()->onConnection('redis')->onQueue('t1');
+        //SendLogs2::dispatch()->onConnection('redis')->onQueue('t2');
+        SendLogs::dispatch()->onConnection('redis')->onQueue('t');
+        //SendLogs1::dispatch()->onConnection('database')->onQueue('t');
+        //var_dump(\Redis::get('name'));
+
     }
 
     public function incr()

@@ -19,6 +19,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\Test' => [
             'App\Listeners\TestListener',
+            'App\Listeners\Test2Listener',
         ],
     ];
 

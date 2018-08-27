@@ -30,6 +30,6 @@ class SendLogs2 implements ShouldQueue
     public function handle()
     {
         sleep(5);
-        file_put_contents(storage_path('logs/test.log'), "2 \r\n");
+        file_put_contents(storage_path('logs/test.log'), "2 \r\n", FILE_APPEND);
     }
 }

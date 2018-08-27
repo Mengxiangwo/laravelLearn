@@ -1,5 +1,6 @@
 <?php
-
+ini_set("display_errors", 1);
+error_reporting(E_ALL);
 return [
 
     /*
@@ -13,7 +14,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_DRIVER', 'database'),
+    'default' => env('QUEUE_DRIVER', 'redis'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +62,7 @@ return [
             'driver' => 'redis',
             'connection' => 'default',
             'queue' => 'default',
-            'retry_after' => 90,
+            'retry_after' => 8,
             'block_for' => null,
         ],
 

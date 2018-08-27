@@ -6,7 +6,7 @@ use App\Events\Test;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class TestListener //implements ShouldQueue
+class Test2Listener //implements ShouldQueue
 {
     public $queue = "tests";
 
@@ -31,6 +31,6 @@ class TestListener //implements ShouldQueue
         $t = $event->t;
 
         //sleep(10);
-        file_put_contents(storage_path('logs/test.log'), '111');
+        file_put_contents(storage_path('logs/test2.log'), '222');
     }
 }

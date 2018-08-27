@@ -12,6 +12,8 @@ class SendLogs1 implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 2;
+
     /**
      * Create a new job instance.
      *
@@ -29,7 +31,7 @@ class SendLogs1 implements ShouldQueue
      */
     public function handle()
     {
-        sleep(5);
-        file_put_contents(storage_path('logs/test.log'), "1 \r\n");
+        sleep(10);
+        file_put_contents(storage_path('logs/test.log'), "1 \r\n", FILE_APPEND);
     }
 }
